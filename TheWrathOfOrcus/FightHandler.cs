@@ -44,7 +44,7 @@ namespace TheWrathOfOrcus
             } 
             else if (fighter2.actualLifepoints <= 0)
             {
-                Console.WriteLine(fighter2.name + " a gagné !");
+                Console.WriteLine(fighter1.name + " a gagné !");
                 this.handleWin(fighter1, fighter2);
             }
         }

@@ -26,6 +26,7 @@ namespace TheWrathOfOrcus.Monsters
         public void attackTarget(Fighter target)
         {
             int damage = this.attack - target.defense;
+            damage = damage >= 0 ? damage : 0;
             Console.ForegroundColor = ConsoleColor.Red;
             target.takeDamage(damage);
             Console.WriteLine("-" + damage + "PV");
