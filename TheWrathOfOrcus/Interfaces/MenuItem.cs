@@ -6,9 +6,9 @@ namespace TheWrathOfOrcus.Interfaces
 {
     public interface MenuItem
     {
-        string name { get; set; }
+        public string name { get; set; }
 
         public void ItemSelected();
-        
+
     }
 }
