@@ -6,7 +6,8 @@ namespace TheWrathOfOrcus
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Bonjour aventurier ! Quel est votre nom ?");
+            Hero hero = new Hero(Console.ReadLine());
         }
     }
 }

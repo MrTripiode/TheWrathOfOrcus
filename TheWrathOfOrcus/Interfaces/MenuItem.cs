@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TheWrathOfOrcus.Interfaces
 {
-    interface MenuItem
+    public interface MenuItem
     {
         string name { get; set; }
 

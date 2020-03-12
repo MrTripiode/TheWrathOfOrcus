@@ -5,13 +5,15 @@ using TheWrathOfOrcus.Interfaces;
 
 namespace TheWrathOfOrcus
 {
-    class MenuHandler 
+    public class MenuHandler 
     {
 
         public static MenuHandler instance;
-        List<MenuItem> menuItems;
+        public List<MenuItem> menuItems;
 
-        public MenuHandler getInstance()
+        private MenuHandler() { menuItems = new List<MenuItem>(); }
+
+        public static MenuHandler getInstance()
         {
             if(MenuHandler.instance == null)
             {
@@ -20,7 +22,7 @@ namespace TheWrathOfOrcus
             return MenuHandler.instance;
         }
 
-        public void addItemToMenu()
+        public void addItemToMenu(MenuItem menuItem)
         {
 
         }

@@ -15,13 +15,13 @@ namespace TheWrathOfOrcus
         int experience { get; set; }
         int level { get; set; }
 
-        public Hero(String name)
+        public Hero(string name)
         {
             this.name = name;
             this.attack = 5;
             this.defense = 5;
             this.totalLifepoints = 50;
-            this.actualLifepoints = this.totalLifepoints;
+            this.actualLifepoints = totalLifepoints;
             this.level = 1;
             this.experience = 0;
 
