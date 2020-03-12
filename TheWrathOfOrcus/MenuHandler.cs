@@ -35,6 +35,7 @@ namespace TheWrathOfOrcus
 
         private void showChoices()
         {
+
             Console.Clear();
             Console.WriteLine("Bienvenue dans le village ! Que souhaitez vous faire ?");
             int i = 1;
@@ -62,7 +63,7 @@ namespace TheWrathOfOrcus
             menuItems[parsedChoice - 1].ItemSelected();
         }
 
-        private void reset() {
+        public void reset() {
             Console.Clear();
             Console.WriteLine("Je n'ai pas compris votre réponse merci de choisir un nombre entre 1 et " + menuItems.Count);
             System.Threading.Thread.Sleep(1000);
