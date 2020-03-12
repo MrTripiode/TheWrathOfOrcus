@@ -17,5 +17,20 @@ namespace TheWrathOfOrcus
         public Pnj(string name, int attack, int defense, int totalLifepoints, Quest quest) {
             throw new NotImplementedException("ET NON");
         }
+
+        public void attackTarget(Fighter target)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void takeDamage(int damage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void handleTurn(Fighter target)
+        {
+            throw new NotImplementedException("NO NEED HERE");
+        }
     }
 }

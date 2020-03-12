@@ -15,13 +15,13 @@ namespace TheWrathOfOrcus
         int experience { get; set; }
         int level { get; set; }
 
-        public Hero(String name)
+        public Hero(string name)
         {
             this.name = name;
             this.attack = 5;
             this.defense = 5;
             this.totalLifepoints = 50;
-            this.actualLifepoints = this.totalLifepoints;
+            this.actualLifepoints = totalLifepoints;
             this.level = 1;
             this.experience = 0;
 
@@ -44,5 +44,19 @@ namespace TheWrathOfOrcus
             }
         }
 
+        public void takeDamage(int damage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void attackTarget(Fighter target)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void handleTurn(Fighter target)
+        {
+            throw new NotImplementedException("NO NEED HERE");
+        }
     }
 }

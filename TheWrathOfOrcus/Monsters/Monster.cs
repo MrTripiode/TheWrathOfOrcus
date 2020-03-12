@@ -16,7 +16,26 @@ namespace TheWrathOfOrcus.Monsters
 
         public void takeDamage(int damage)
         {
-            
+            if(damage < 0)
+            {
+                throw new ArgumentException("Fighters can't take negative damages");
+            }
+            this.actualLifepoints = this.actualLifepoints - damage;
+        }
+
+        public void attackTarget(Fighter target)
+        {
+            int damage = this.attack - target.defense;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("-" + damage + "PV");
+            Console.ForegroundColor = ConsoleColor.White;
+            target.takeDamage(damage);
+        }
+
+        public void handleTurn(Fighter target)
+        {
+            Console.WriteLine(this.name + " attaque" + target.name + "!");
+            this.attackTarget(target);
         }
     }
 }
