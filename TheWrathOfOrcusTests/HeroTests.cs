@@ -39,5 +39,16 @@ namespace TheWrathOfOrcusTests
             hero.getLootAndExp(loot);
             Assert.AreEqual(playerOriginalGold + lootedGold, hero.gold);
         }
+
+        [Test]
+        public void TestHeroGainExpWhenLooting()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalExp = hero.experience;
+            int lootedExp = 10;
+            Loot loot = new Loot(0, lootedExp);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(playerOriginalExp + lootedExp, hero.experience);
+        }
     }
 }
