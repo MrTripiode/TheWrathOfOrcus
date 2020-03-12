@@ -24,9 +24,9 @@ namespace TheWrathOfOrcus
 
         public void nextTurn(Fighter active, Fighter target)
         {
-            active.handleTurn(target);
             if (this.continueFight())
             {
+                active.handleTurn(target);
                 this.nextTurn(target, active);
             } 
             else
@@ -55,7 +55,7 @@ namespace TheWrathOfOrcus
             {
                 Hero hero = winner as Hero;
                 Monster monster = loser as Monster;
-                hero.getLoot(monster.loot);
+                hero.getLootAndExp(monster.loot);
             } 
             else if (loser.GetType() == typeof(Hero))
             {

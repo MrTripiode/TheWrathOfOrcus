@@ -59,9 +59,9 @@ namespace TheWrathOfOrcus
         {
             throw new NotImplementedException();
         }
-        public void getLoot(Loot loot)
+        public void getLootAndExp(Loot loot)
         {
-
+            this.gold += loot.gold;
         }
 
         internal void handleDeath()

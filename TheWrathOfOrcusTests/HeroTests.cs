@@ -28,5 +28,16 @@ namespace TheWrathOfOrcusTests
             hero.heal(-25);
             Assert.AreEqual(hero.totalLifepoints-2, hero.actualLifepoints);
         }
+
+        [Test]
+        public void TestHeroGainGoldWhenLooting()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalGold = hero.gold;
+            int lootedGold = 10;
+            Loot loot = new Loot(lootedGold, 0);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(playerOriginalGold + lootedGold, hero.gold);
+        }
     }
 }

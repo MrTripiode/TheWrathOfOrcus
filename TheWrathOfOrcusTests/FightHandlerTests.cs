@@ -25,15 +25,5 @@ namespace TheWrathOfOrcusTests
             FightHandler fh = new FightHandler(living, living_bis);
             Assert.IsTrue(fh.continueFight());
         }
-
-        [Test]
-        public void playerGainGoldWhenWinsFight()
-        {
-            Hero hero = new Hero("Test");
-            int heroGoldBeforeFight = hero.gold;
-            Mocks.MockMonster deadMonster = new Mocks.MockMonster(0, 0, 0, new Tuple<int, int>(5,10), null);
-            FightHandler fh = new FightHandler(hero, deadMonster);
-            Assert.Greater(hero.gold, heroGoldBeforeFight);
-        }
     }
 }
