@@ -16,8 +16,6 @@ namespace TheWrathOfOrcus
         int experience { get; set; }
         int level { get; set; }
         public int gold { get; set; }
-        public int experience { get; set; }
-        public int level { get; set; }
 
         public Hero(string name)
         {

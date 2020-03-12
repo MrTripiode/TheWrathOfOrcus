@@ -23,9 +23,9 @@ namespace TheWrathOfOrcus
             this.quest = quest;
         }
 
-        public void talk(Hero hero) {
+        public void talk() {
             Console.Clear();
-            Console.WriteLine("Bonjour ! " + hero.name);
+            Console.WriteLine("Bonjour ! " + MenuHandler.getInstance().hero);
             Console.WriteLine("Je suis " + this.name + ", j'ai besoin d'aide !");
             Console.WriteLine("Acceptes tu " + this.quest.name + " ?");
             Console.WriteLine("Il te faudra ..." + quest.description +
@@ -33,22 +33,23 @@ namespace TheWrathOfOrcus
                               ", nombre de monstres: " + this.quest.monsters.Count + ")");
         }
 
-        public void makeAchoice(Hero hero) {
-            this.talk(hero);
-            PnjMenuItem accept = new PnjMenuItem("Accepter", this, hero);
-            PnjMenuItem deny = new PnjMenuItem("Refuser", this, hero);
+        public void makeAchoice() {
+            this.talk();
+            PnjMenuItem accept = new PnjMenuItem("Accepter", this);
+            PnjMenuItem deny = new PnjMenuItem("Refuser", this);
             PnjMenuHandler.getInstance().addItemToMenu(accept);
             PnjMenuHandler.getInstance().addItemToMenu(deny);
 
             PnjMenuHandler.getInstance().returnToMenu();
         }
 
-        public void launchQuest(Hero hero) {
-            foreach (var monster in this.quest.monsters)
-            {
-                FightHandler fightHandler = new FightHandler(hero, monster);
+        public Boolean launchQuest() {
+            foreach (var monster in this.quest.monsters) {
+                FightHandler fightHandler = new FightHandler(MenuHandler.getInstance().hero, monster);
                 fightHandler.startFight();
+                this.quest.KillMonster();
             }
+            return this.quest.IsSuccess();
         }
 
         public void attackTarget(Fighter target)

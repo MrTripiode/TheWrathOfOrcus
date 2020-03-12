@@ -9,16 +9,14 @@ namespace TheWrathOfOrcus
     {
         public string name { get; set; }
         Pnj associatedPnj { get; }
-        Hero hero { get; }
 
-        public PnjMenuItem(string name, Pnj pnj, Hero hero) {
+        public PnjMenuItem(string name, Pnj pnj) {
             this.name = name;
             this.associatedPnj = pnj;
-            this.hero = hero;
         }
         public void ItemSelected() {
             if (this.name == "Accepter") {
-                this.associatedPnj.launchQuest(hero);
+                this.associatedPnj.launchQuest();
             } else if (this.name == "Refuser") {
                 MenuHandler.getInstance().returnToMenu();
             }
