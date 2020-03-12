@@ -18,7 +18,10 @@ namespace TheWrathOfOrcus
             items = new List<Item>();
             weapons = new List<Weapon>();
             armors = new List<Armor>();
+        }
 
+        public void addStartingItems()
+        {
             addItemToInventory(new AntoineStick());
             addItemToInventory(new JosueBack());
             addItemToInventory(new Potion(25));
