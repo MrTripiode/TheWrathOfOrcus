@@ -1,4 +1,5 @@
 ﻿using System;
+using TheWrathOfOrcus.Monsters;
 
 namespace TheWrathOfOrcus
 {
@@ -8,6 +9,7 @@ namespace TheWrathOfOrcus
         {
             Console.WriteLine("Bonjour aventurier ! Quel est votre nom ?");
             Hero hero = new Hero(Console.ReadLine());
+            FightHandler fh = new FightHandler(new SpiderSwarm(), new SpiderSwarm());
         }
     }
 }

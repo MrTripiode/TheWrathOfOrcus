@@ -5,24 +5,24 @@ using TheWrathOfOrcus.Interfaces;
 
 namespace TheWrathOfOrcus
 {
-    class FightHandler
+    public class FightHandler
     {
-        Tuple<Fighter, Fighter> fighters;
         public FightHandler(Fighter fighter1, Fighter fighter2)
         {
-            fighters = new Tuple<Fighter, Fighter>(fighter1, fighter2);
+            Console.Clear();
+            this.nextTurn(fighter1, fighter2);
         }
 
         private void nextTurn(Fighter active, Fighter target)
         {
             active.handleTurn(target);
-            if (continueFight())
+            if (continueFight(active, target))
             {
                 this.nextTurn(target, active);
             }
         }
 
-        bool continueFight()
+        public static bool continueFight(Fighter fighter1, Fighter fighter2)
         {
             return true;
         }

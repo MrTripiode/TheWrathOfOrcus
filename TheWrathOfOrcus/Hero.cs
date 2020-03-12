@@ -53,5 +53,10 @@ namespace TheWrathOfOrcus
         {
             throw new NotImplementedException();
         }
+
+        public void handleTurn(Fighter target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
