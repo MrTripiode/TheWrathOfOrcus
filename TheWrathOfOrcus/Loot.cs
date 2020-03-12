@@ -20,6 +20,7 @@ namespace TheWrathOfOrcus
         {
             Random rand = new Random();
             this.gold = rand.Next(goldRange.Item1, goldRange.Item2);
+            this.experience = rand.Next(expRange.Item1, expRange.Item2);
         }
     }
 }
