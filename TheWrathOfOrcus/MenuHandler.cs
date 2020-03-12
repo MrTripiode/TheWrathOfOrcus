@@ -24,11 +24,7 @@ namespace TheWrathOfOrcus
 
         public void addItemToMenu(MenuItem menuItem)
         {
-            if (!menuItems.Contains(menuItem))
-            {
-                menuItems.Add(menuItem);
-            }
-
+            if (!menuItems.Contains(menuItem))  menuItems.Add(menuItem);
         }
 
 
