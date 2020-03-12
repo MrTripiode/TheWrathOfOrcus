@@ -13,8 +13,6 @@ namespace TheWrathOfOrcus
         public int totalLifepoints { get; set; }
         public int actualLifepoints { get; set; }
         public Inventory inventory { get; set; }
-        int experience { get; set; }
-        int level { get; set; }
         public int gold { get; set; }
         public int experience { get; set; }
         public int level { get; set; }

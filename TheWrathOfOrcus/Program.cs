@@ -9,7 +9,7 @@ namespace TheWrathOfOrcus
         {
             Console.WriteLine("Bonjour aventurier ! Quel est votre nom ?");
             Hero hero = new Hero(Console.ReadLine());
-            MenuHandler.getInstance().MenuItemBank();
+            MenuHandler.getInstance().MenuItemBank(hero);
             MenuHandler.getInstance().returnToMenu();
             FightHandler fh = new FightHandler(new SpiderSwarm(), new SpiderSwarm());
             fh.startFight();
