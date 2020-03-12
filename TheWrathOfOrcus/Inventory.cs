@@ -25,6 +25,11 @@ namespace TheWrathOfOrcus
                 armors.Add(item as Armor);
                 return true;
             }
+            if (item is Weapon)
+            {
+                weapons.Add(item as Weapon);
+                return true;
+            }
             return false;
         }
     }
