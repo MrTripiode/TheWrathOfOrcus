@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using TheWrathOfOrcus.Interfaces;
+using TheWrathOfOrcus.Items;
+using TheWrathOfOrcus.Items.Armors;
+using TheWrathOfOrcus.Items.Weapons;
 
 namespace TheWrathOfOrcus
 {
@@ -17,7 +19,9 @@ namespace TheWrathOfOrcus
             weapons = new List<Weapon>();
             armors = new List<Armor>();
 
-
+            addItemToInventory(new AntoineStick());
+            addItemToInventory(new JosueBack());
+            addItemToInventory(new Potion(25));
         }
 
         public void addItemToInventory(Item item)
