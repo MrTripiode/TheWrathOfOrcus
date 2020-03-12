@@ -2,16 +2,11 @@
 using NUnit.Framework;
 using TheWrathOfOrcus;
 using TheWrathOfOrcus.Monsters;
-using System.Diagnostics;
 
 namespace TheWrathOfOrcusTests
 {
     public class QuestsTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
         [Test]
         public void QuestCreation()
         {

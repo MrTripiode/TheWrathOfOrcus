@@ -5,13 +5,17 @@ using TheWrathOfOrcus.Interfaces;
 
 namespace TheWrathOfOrcus
 {
-    class Pnj : Fighter
+    public class Pnj : Fighter
     {
         public string name { get; set; }
         public int attack { get; set; }
         public int defense { get; set; }
         public int totalLifepoints { get; set; }
         public int actualLifepoints { get; set; }
-        List<Quest> quests { get; }
+        public Quest quest { get; }
+
+        public Pnj(string name, int attack, int defense, int totalLifepoints, Quest quest) {
+            throw new NotImplementedException("ET NON");
+        }
     }
 }
