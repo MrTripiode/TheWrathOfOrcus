@@ -18,5 +18,14 @@ namespace TheWrathOfOrcusTests
             inventory.addItemToInventory(mockArmor);
             Assert.AreEqual(1,inventory.armors.Count);
         }
+
+        [Test]
+        public void TestInventoryShouldAddElementToWeaponsWhenWpeaonGiven()
+        {
+            MockWeapon mockWeapon = new MockWeapon();
+            Inventory inventory = new Inventory();
+            inventory.addItemToInventory(mockWeapon);
+            Assert.AreEqual(1, inventory.weapons.Count);
+        }
     }
 }
