@@ -49,17 +49,24 @@ namespace TheWrathOfOrcus
 
         private void handleInputs()
         {
-            int choice = Console.Read();
-
-            if(!(choice > 48 && choice < 49 + menuItems.Count+1))
-            {
-                Console.Clear();
-                Console.WriteLine("Je n'ai pas compris votre réponse merci de choisir un nombre entre 1 et " + menuItems.Count);
-                System.Threading.Thread.Sleep(1000);
-                returnToMenu();
+            int parsedChoice = 0;
+            string choice = Console.ReadLine();
+            if(!(Int32.TryParse(choice, out parsedChoice))) {
+                this.reset();
             }
 
-            menuItems[choice - 49].ItemSelected();
+            if (parsedChoice < 0 || parsedChoice > (this.menuItems.Count)) {
+                this.reset();
+            }
+
+            menuItems[parsedChoice - 1].ItemSelected();
+        }
+
+        private void reset() {
+            Console.Clear();
+            Console.WriteLine("Je n'ai pas compris votre réponse merci de choisir un nombre entre 1 et " + menuItems.Count);
+            System.Threading.Thread.Sleep(1000);
+            returnToMenu();
         }
 
         public void MenuItemBank(Hero hero) {
