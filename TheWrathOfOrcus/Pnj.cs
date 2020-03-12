@@ -23,6 +23,16 @@ namespace TheWrathOfOrcus
             this.quest = quest;
         }
 
+        public void talk() {
+            Console.WriteLine("Bonjour ! ");
+            Console.WriteLine("Je suis " + this.name + ", j'ai besoin d'aide !");
+            Console.WriteLine("Acceptes tu " + this.quest.name + " ?");
+            Console.WriteLine("Il te faudra ..." + quest.description +
+                              "( Difficulté: " + this.quest.difficulty +
+                              ", nombre de monstres: " + this.quest.monsters.Count + ")");
+        }
+
+
         public void attackTarget(Fighter target)
         {
             throw new NotImplementedException();
