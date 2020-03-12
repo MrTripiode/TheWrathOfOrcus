@@ -4,10 +4,8 @@ using System.Text;
 
 namespace TheWrathOfOrcus.Interfaces
 {
-    public interface Item
+    public interface Weapon : Item
     {
-        public string name { get; set; }
-
-        public void use();
+        public int itemAttack { get; set; }
     }
 }

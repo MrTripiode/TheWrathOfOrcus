@@ -12,6 +12,7 @@ namespace TheWrathOfOrcus
         public int defense { get; set; }
         public int totalLifepoints { get; set; }
         public int actualLifepoints { get; set; }
+        public Inventory inventory { get; set; }
         int experience { get; set; }
         int level { get; set; }
 
@@ -24,6 +25,7 @@ namespace TheWrathOfOrcus
             this.actualLifepoints = totalLifepoints;
             this.level = 1;
             this.experience = 0;
+            this.inventory = new Inventory();
 
         }
 
