@@ -62,6 +62,25 @@ namespace TheWrathOfOrcus
         public void getLootAndExp(Loot loot)
         {
             this.gold += loot.gold;
+            this.experience += loot.experience;
+            this.checkIfGainedLevel();
+        }
+
+        private void checkIfGainedLevel()
+        {
+            int threshold = (int)Math.Round(100 * (1 + 2 * level * 0.1), 0);
+            if(this.experience >= threshold)
+            {
+                this.experience = this.experience - threshold;
+                this.gainLevel();
+            }
+        }
+
+        private void gainLevel()
+        {
+            this.level++;
+            this.totalLifepoints += 10;
+            this.actualLifepoints += 10;
         }
 
         internal void handleDeath()

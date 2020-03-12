@@ -56,10 +56,32 @@ namespace TheWrathOfOrcusTests
         {
             Hero hero = new Hero("Patate");
             int playerOriginalExp = hero.experience;
-            int lootedExp = 120;
+            int lootedExp = 200;
             Loot loot = new Loot(0, lootedExp);
             hero.getLootAndExp(loot);
             Assert.AreEqual(2, hero.level);
+        }
+
+        [Test]
+        public void testHeroGainMaxLifeWhenLeveling()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalExp = hero.experience;
+            int lootedExp = 200;
+            Loot loot = new Loot(0, lootedExp);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(60, hero.totalLifepoints);
+        }
+
+        [Test]
+        public void testHeroGainActualLifeWhenLeveling()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalExp = hero.experience;
+            int lootedExp = 200;
+            Loot loot = new Loot(0, lootedExp);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(60, hero.actualLifepoints);
         }
     }
 }
