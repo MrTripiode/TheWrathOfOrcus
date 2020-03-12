@@ -1,25 +1,25 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TheWrathOfOrcus.Interfaces;
 
 namespace TheWrathOfOrcus
 {
-    public class MenuHandler
+    public class PnjMenuHandler
     {
 
-        public static MenuHandler instance;
-        public List<MenuItem> menuItems;
+        public static PnjMenuHandler instance;
+        public List<PnjMenuItem> menuItems;
 
-        private MenuHandler() { menuItems = new List<MenuItem>(); }
+        private PnjMenuHandler() { menuItems = new List<PnjMenuItem>(); }
 
-        public static MenuHandler getInstance()
+        public static PnjMenuHandler getInstance()
         {
-            if(MenuHandler.instance == null)
+            if(PnjMenuHandler.instance == null)
             {
-                MenuHandler.instance = new MenuHandler();
+                PnjMenuHandler.instance = new PnjMenuHandler();
             }
-            return MenuHandler.instance;
+            return PnjMenuHandler.instance;
         }
 
         public void returnToMenu()
@@ -27,17 +27,15 @@ namespace TheWrathOfOrcus
             showChoices();
         }
 
-        public void addItemToMenu(MenuItem menuItem)
+        public void addItemToMenu(PnjMenuItem menuItem)
         {
             if (!menuItems.Contains(menuItem))  menuItems.Add(menuItem);
         }
 
         private void showChoices()
         {
-            Console.Clear();
-            Console.WriteLine("Bienvenue dans le village ! Que souhaitez vous faire ?");
             int i = 1;
-            foreach(MenuItem item in menuItems)
+            foreach(PnjMenuItem item in menuItems)
             {
                 Console.WriteLine(i + ") " + item.name);
                 i++;

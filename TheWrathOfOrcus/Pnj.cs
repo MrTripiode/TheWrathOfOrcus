@@ -23,8 +23,9 @@ namespace TheWrathOfOrcus
             this.quest = quest;
         }
 
-        public void talk() {
-            Console.WriteLine("Bonjour ! ");
+        public void talk(Hero hero) {
+            Console.Clear();
+            Console.WriteLine("Bonjour ! " + hero.name);
             Console.WriteLine("Je suis " + this.name + ", j'ai besoin d'aide !");
             Console.WriteLine("Acceptes tu " + this.quest.name + " ?");
             Console.WriteLine("Il te faudra ..." + quest.description +
@@ -32,6 +33,23 @@ namespace TheWrathOfOrcus
                               ", nombre de monstres: " + this.quest.monsters.Count + ")");
         }
 
+        public void makeAchoice(Hero hero) {
+            this.talk(hero);
+            PnjMenuItem accept = new PnjMenuItem("Accepter", this, hero);
+            PnjMenuItem deny = new PnjMenuItem("Refuser", this, hero);
+            PnjMenuHandler.getInstance().addItemToMenu(accept);
+            PnjMenuHandler.getInstance().addItemToMenu(deny);
+
+            PnjMenuHandler.getInstance().returnToMenu();
+        }
+
+        public void launchQuest(Hero hero) {
+            foreach (var monster in this.quest.monsters)
+            {
+                FightHandler fightHandler = new FightHandler(hero, monster);
+                fightHandler.startFight();
+            }
+        }
 
         public void attackTarget(Fighter target)
         {

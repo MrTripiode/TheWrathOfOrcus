@@ -8,13 +8,20 @@ namespace TheWrathOfOrcus
     public class PnjMenuItem : MenuItem
     {
         public string name { get; set; }
+        Pnj associatedPnj { get; }
+        Hero hero { get; }
 
-        public PnjMenuItem(string name) {
+        public PnjMenuItem(string name, Pnj pnj, Hero hero) {
             this.name = name;
+            this.associatedPnj = pnj;
+            this.hero = hero;
         }
         public void ItemSelected() {
-            throw new NotImplementedException("C'est pas la");
-            MenuHandler.getInstance().returnToMenu();
+            if (this.name == "Accepter") {
+                this.associatedPnj.launchQuest(hero);
+            } else if (this.name == "Refuser") {
+                MenuHandler.getInstance().returnToMenu();
+            }
         }
     }
 }
