@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using TheWrathOfOrcus.Interfaces;
+using TheWrathOfOrcus.Monsters;
 
 namespace TheWrathOfOrcus
 {

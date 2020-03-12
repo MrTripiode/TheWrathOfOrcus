@@ -10,5 +10,10 @@ namespace TheWrathOfOrcus
         int gold { get; }
         int experience { get; }
         List<Item> items { get; }
+        public Loot(int gold, int experience)
+        {
+            this.gold = gold;
+            this.experience = experience;
+        }
     }
 }
