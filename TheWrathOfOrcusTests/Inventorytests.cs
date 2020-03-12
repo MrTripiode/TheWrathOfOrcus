@@ -20,12 +20,21 @@ namespace TheWrathOfOrcusTests
         }
 
         [Test]
-        public void TestInventoryShouldAddElementToWeaponsWhenWpeaonGiven()
+        public void TestInventoryShouldAddElementToWeaponsWhenWeaponGiven()
         {
             MockWeapon mockWeapon = new MockWeapon();
             Inventory inventory = new Inventory();
             inventory.addItemToInventory(mockWeapon);
             Assert.AreEqual(1, inventory.weapons.Count);
+        }
+
+        [Test]
+        public void TestInventoryShouldAddElementToItemsWhenItemGiven()
+        {
+            MockItem mockItem = new MockItem();
+            Inventory inventory = new Inventory();
+            inventory.addItemToInventory(mockItem);
+            Assert.AreEqual(1, inventory.items.Count);
         }
     }
 }

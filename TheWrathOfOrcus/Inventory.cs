@@ -18,19 +18,20 @@ namespace TheWrathOfOrcus
             armors = new List<Armor>();
         }
 
-        public bool addItemToInventory(Item item)
+        public void addItemToInventory(Item item)
         {
             if(item is Armor)
             {
                 armors.Add(item as Armor);
-                return true;
             }
-            if (item is Weapon)
+            else if (item is Weapon)
             {
                 weapons.Add(item as Weapon);
-                return true;
             }
-            return false;
+            else
+            {
+                items.Add(item);
+            }
         }
     }
 }
