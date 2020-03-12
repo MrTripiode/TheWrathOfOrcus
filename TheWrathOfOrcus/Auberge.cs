@@ -11,7 +11,6 @@ namespace TheWrathOfOrcus
         public static void healHero(Hero hero)
         {
             hero.heal(healPower);
-           
         }
 
         public static void greet(Hero hero)
@@ -34,7 +33,7 @@ namespace TheWrathOfOrcus
             }
             else
             {
-                Console.WriteLine("D'accord ! A plus tard alors "+hero.name);
+                Console.WriteLine("D'accord ! A plus tard alors " + hero.name);
             }
 
         }
