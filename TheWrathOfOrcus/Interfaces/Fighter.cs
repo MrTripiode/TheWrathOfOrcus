@@ -15,5 +15,6 @@ namespace TheWrathOfOrcus.Interfaces
         void takeDamage(int damage);
 
         void attackTarget(Fighter target);
+        void handleTurn(Fighter target);
     }
 }

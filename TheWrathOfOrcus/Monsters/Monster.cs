@@ -26,7 +26,16 @@ namespace TheWrathOfOrcus.Monsters
         public void attackTarget(Fighter target)
         {
             int damage = this.attack - target.defense;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("-" + damage + "PV");
+            Console.ForegroundColor = ConsoleColor.White;
             target.takeDamage(damage);
+        }
+
+        public void handleTurn(Fighter target)
+        {
+            Console.WriteLine(this.name + " attaque" + target.name + "!");
+            this.attackTarget(target);
         }
     }
 }
