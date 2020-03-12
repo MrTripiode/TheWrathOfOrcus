@@ -14,6 +14,8 @@ namespace TheWrathOfOrcus
         public int actualLifepoints { get; set; }
         public Inventory inventory { get; set; }
         public int gold { get; set; }
+        public int level { get; set; }
+        public int experience { get; set; }
 
         public Hero(string name)
         {

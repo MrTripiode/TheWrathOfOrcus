@@ -64,7 +64,6 @@ namespace TheWrathOfOrcus
 
         public void MenuItemBank(Hero hero) {
             this.hero = hero;
-            MenuHandler.getInstance().addItemToMenu(new PnjMenuItem("Accepter"));
             MenuHandler.getInstance().addItemToMenu(new InventoryMenuItem("Voir votre inventaire"));
         }
 
