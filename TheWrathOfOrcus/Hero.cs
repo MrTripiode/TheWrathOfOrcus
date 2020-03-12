@@ -12,8 +12,9 @@ namespace TheWrathOfOrcus
         public int defense { get; set; }
         public int totalLifepoints { get; set; }
         public int actualLifepoints { get; set; }
-        int experience { get; set; }
-        int level { get; set; }
+        public int gold { get; set; }
+        public int experience { get; set; }
+        public int level { get; set; }
 
         public Hero(string name)
         {
@@ -55,6 +56,15 @@ namespace TheWrathOfOrcus
         }
 
         public void handleTurn(Fighter target)
+        {
+            throw new NotImplementedException();
+        }
+        public void getLoot(Loot loot)
+        {
+
+        }
+
+        internal void handleDeath()
         {
             throw new NotImplementedException();
         }
