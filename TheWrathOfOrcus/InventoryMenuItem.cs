@@ -16,8 +16,6 @@ namespace TheWrathOfOrcus
         public void ItemSelected()
         {
             MenuHandler.getInstance().hero.inventory.showInventory();
-            Console.Out.Flush();
-            Console.Read();
             MenuHandler.getInstance().returnToMenu();
         }
     }

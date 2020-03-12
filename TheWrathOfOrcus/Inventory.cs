@@ -16,6 +16,8 @@ namespace TheWrathOfOrcus
             items = new List<Item>();
             weapons = new List<Weapon>();
             armors = new List<Armor>();
+
+
         }
 
         public void addItemToInventory(Item item)
@@ -53,7 +55,8 @@ namespace TheWrathOfOrcus
             {
                 Console.WriteLine("- " + item.name);
             }
-            Console.Write("");
+            System.Threading.Thread.Sleep(2000);
+            Console.Clear();
         }
     }
 }
