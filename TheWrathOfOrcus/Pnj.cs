@@ -19,6 +19,11 @@ namespace TheWrathOfOrcus
             throw new NotImplementedException();
         }
 
+        public void handleTurn(Fighter target)
+        {
+            throw new NotImplementedException();
+        }
+
         public void takeDamage(int damage)
         {
             throw new NotImplementedException();
