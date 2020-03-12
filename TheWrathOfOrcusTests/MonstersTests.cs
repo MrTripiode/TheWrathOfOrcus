@@ -9,12 +9,13 @@ namespace TheWrathOfOrcusTests
 {
     class MonstersTests
     {
-        void testMonstersLoseTheGoodAmountOfLifePointsWhenTakingDamage()
+        [Test]
+        public void testMonstersLoseTheGoodAmountOfLifePointsWhenTakingDamage()
         {
             Monster mockMonster = new MockMonster(0,0,10,0,0);
             int damage = 5;
             mockMonster.takeDamage(damage);
-            Assert.AreEqual(mockMonster.actualLifepoints, mockMonster.totalLifepoints - damage);
+            Assert.AreEqual(mockMonster.totalLifepoints - damage, mockMonster.actualLifepoints);
         }
     }
 }
