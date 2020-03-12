@@ -56,7 +56,7 @@ namespace TheWrathOfOrcus
 
         public void handleTurn(Fighter target)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("NO NEED HERE");
         }
     }
 }
