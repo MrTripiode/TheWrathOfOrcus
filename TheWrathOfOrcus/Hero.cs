@@ -43,5 +43,10 @@ namespace TheWrathOfOrcus
         {
             throw new NotImplementedException();
         }
+
+        public void attackTarget(Fighter target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

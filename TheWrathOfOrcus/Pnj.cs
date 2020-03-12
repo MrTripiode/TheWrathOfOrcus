@@ -14,6 +14,11 @@ namespace TheWrathOfOrcus
         public int actualLifepoints { get; set; }
         List<Quest> quests { get; }
 
+        public void attackTarget(Fighter target)
+        {
+            throw new NotImplementedException();
+        }
+
         public void takeDamage(int damage)
         {
             throw new NotImplementedException();

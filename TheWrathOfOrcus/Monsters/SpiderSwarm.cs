@@ -13,6 +13,7 @@ namespace TheWrathOfOrcus.Monsters
             this.defense = 2;
             this.totalLifepoints = 10;
             this.actualLifepoints = this.totalLifepoints;
+            this.loot = new Loot(10, 10);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TheWrathOfOrcus.Interfaces
 {
-    interface Fighter
+    public interface Fighter
     {
         string name { get; set; }
         int attack { get; set; }
@@ -13,5 +13,7 @@ namespace TheWrathOfOrcus.Interfaces
         int actualLifepoints { get; set; }
 
         void takeDamage(int damage);
+
+        void attackTarget(Fighter target);
     }
 }

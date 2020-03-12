@@ -16,7 +16,7 @@ namespace TheWrathOfOrcus
         List<Monster> monsters { get; }
 
         public Quest(String name, String description, int difficulty) {
-            throw new NotImplementedException("Not implemented.");
+
         }
     }
 }
