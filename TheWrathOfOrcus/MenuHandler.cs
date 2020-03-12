@@ -10,6 +10,7 @@ namespace TheWrathOfOrcus
 
         public static MenuHandler instance;
         public List<MenuItem> menuItems;
+        public Hero hero;
 
         private MenuHandler() { menuItems = new List<MenuItem>(); }
 
@@ -34,6 +35,7 @@ namespace TheWrathOfOrcus
 
         private void showChoices()
         {
+
             Console.Clear();
             Console.WriteLine("Bienvenue dans le village ! Que souhaitez vous faire ?");
             int i = 1;
@@ -48,17 +50,31 @@ namespace TheWrathOfOrcus
 
         private void handleInputs()
         {
-            int choice = Console.Read();
-
-            if(!(choice > 48 && choice < 49 + menuItems.Count))
-            {
-                Console.Clear();
-                Console.WriteLine("Je n'ai pas compris votre réponse merci de choisir un nombre entre 1 et " + menuItems.Count);
-                System.Threading.Thread.Sleep(1000);
-                returnToMenu();
+            int parsedChoice = 0;
+            string choice = Console.ReadLine();
+            if(!(Int32.TryParse(choice, out parsedChoice))) {
+                this.reset();
             }
 
-            menuItems[choice - 49].ItemSelected();
+            if (parsedChoice < 0 || parsedChoice > (this.menuItems.Count)) {
+                this.reset();
+            }
+
+            menuItems[parsedChoice - 1].ItemSelected();
         }
+
+        public void reset() {
+            Console.Clear();
+            Console.WriteLine("Je n'ai pas compris votre réponse merci de choisir un nombre entre 1 et " + menuItems.Count);
+            System.Threading.Thread.Sleep(1000);
+            returnToMenu();
+        }
+
+        public void MenuItemBank(Hero hero) {
+            this.hero = hero;
+            MenuHandler.getInstance().addItemToMenu(new InventoryMenuItem("Voir votre inventaire"));
+        }
+
+
     }
 }

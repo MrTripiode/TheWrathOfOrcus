@@ -27,6 +27,7 @@ namespace TheWrathOfOrcus
             this.level = 1;
             this.experience = 0;
             this.inventory = new Inventory();
+            this.inventory.addStartingItems();
 
         }
 
