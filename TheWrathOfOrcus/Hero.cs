@@ -29,7 +29,14 @@ namespace TheWrathOfOrcus
 
         public void heal(int amount)
         {
-
+            if(this.actualLifepoints + amount > totalLifepoints)
+            {
+                actualLifepoints = totalLifepoints;
+            }
+            else
+            {
+                actualLifepoints = actualLifepoints + amount;
+            }
         }
 
     }
