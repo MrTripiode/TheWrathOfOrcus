@@ -20,6 +20,11 @@ namespace TheWrathOfOrcus
 
         public bool addItemToInventory(Item item)
         {
+            if(item is Armor)
+            {
+                armors.Add(item as Armor);
+                return true;
+            }
             return false;
         }
     }
