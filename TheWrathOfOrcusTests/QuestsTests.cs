@@ -23,13 +23,13 @@ namespace TheWrathOfOrcusTests
             Assert.AreEqual(quest.loot, loot);
             Assert.AreEqual(quest.monsters.Count, 6);
         }
-
+        [Test]
         public void QuestSuccess() {
             Loot loot = new Loot(29, 30);
             Quest quest = new Quest("TestQuest", "Awesome Quest to do", 1, loot);
             Assert.False(quest.IsSuccess());
         }
-
+        [Test]
         public void QuestMonsterKilled() {
             Loot loot = new Loot(29, 30);
             Quest quest = new Quest("TestQuest", "Awesome Quest to do", 1, loot);

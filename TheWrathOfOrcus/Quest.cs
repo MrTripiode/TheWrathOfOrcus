@@ -28,11 +28,14 @@ namespace TheWrathOfOrcus
         }
 
         public Boolean IsSuccess() {
-            throw new NotImplementedException("Not implemented.");
+            if (this.monsters.Count == 0) {
+                return true;
+            }
+            return false;
         }
 
         public void KillMonster() {
-            throw new NotImplementedException("Not implemented.");
+            this.monsters.RemoveAt(0);
         }
     }
 }
