@@ -15,7 +15,12 @@ namespace TheWrathOfOrcus
         public Quest quest { get; }
 
         public Pnj(string name, int attack, int defense, int totalLifepoints, Quest quest) {
-            throw new NotImplementedException("ET NON");
+            this.name = name;
+            this.attack = attack;
+            this.defense = defense;
+            this.totalLifepoints = totalLifepoints;
+            this.actualLifepoints = this.totalLifepoints;
+            this.quest = quest;
         }
 
         public void attackTarget(Fighter target)
