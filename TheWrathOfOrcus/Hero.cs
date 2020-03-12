@@ -12,8 +12,12 @@ namespace TheWrathOfOrcus
         public int defense { get; set; }
         public int totalLifepoints { get; set; }
         public int actualLifepoints { get; set; }
+        public Inventory inventory { get; set; }
         int experience { get; set; }
         int level { get; set; }
+        public int gold { get; set; }
+        public int experience { get; set; }
+        public int level { get; set; }
 
         public Hero(string name)
         {
@@ -24,6 +28,7 @@ namespace TheWrathOfOrcus
             this.actualLifepoints = totalLifepoints;
             this.level = 1;
             this.experience = 0;
+            this.inventory = new Inventory();
 
         }
 
@@ -56,7 +61,35 @@ namespace TheWrathOfOrcus
 
         public void handleTurn(Fighter target)
         {
-            throw new NotImplementedException("NO NEED HERE");
+            throw new NotImplementedException();
+        }
+        public void getLootAndExp(Loot loot)
+        {
+            this.gold += loot.gold;
+            this.experience += loot.experience;
+            this.checkIfGainedLevel();
+        }
+
+        private void checkIfGainedLevel()
+        {
+            int threshold = (int)Math.Round(100 * (1 + 2 * level * 0.1), 0);
+            if(this.experience >= threshold)
+            {
+                this.experience = this.experience - threshold;
+                this.gainLevel();
+            }
+        }
+
+        private void gainLevel()
+        {
+            this.level++;
+            this.totalLifepoints += 10;
+            this.actualLifepoints += 10;
+        }
+
+        internal void handleDeath()
+        {
+            throw new NotImplementedException();
         }
     }
 }

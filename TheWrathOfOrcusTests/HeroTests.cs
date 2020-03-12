@@ -28,5 +28,60 @@ namespace TheWrathOfOrcusTests
             hero.heal(-25);
             Assert.AreEqual(hero.totalLifepoints-2, hero.actualLifepoints);
         }
+
+        [Test]
+        public void TestHeroGainGoldWhenLooting()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalGold = hero.gold;
+            int lootedGold = 10;
+            Loot loot = new Loot(lootedGold, 0);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(playerOriginalGold + lootedGold, hero.gold);
+        }
+
+        [Test]
+        public void TestHeroGainExpWhenLooting()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalExp = hero.experience;
+            int lootedExp = 10;
+            Loot loot = new Loot(0, lootedExp);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(playerOriginalExp + lootedExp, hero.experience);
+        }
+
+        [Test]
+        public void testHeroGainLevelWhenAtExpThreshold()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalExp = hero.experience;
+            int lootedExp = 200;
+            Loot loot = new Loot(0, lootedExp);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(2, hero.level);
+        }
+
+        [Test]
+        public void testHeroGainMaxLifeWhenLeveling()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalExp = hero.experience;
+            int lootedExp = 200;
+            Loot loot = new Loot(0, lootedExp);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(60, hero.totalLifepoints);
+        }
+
+        [Test]
+        public void testHeroGainActualLifeWhenLeveling()
+        {
+            Hero hero = new Hero("Patate");
+            int playerOriginalExp = hero.experience;
+            int lootedExp = 200;
+            Loot loot = new Loot(0, lootedExp);
+            hero.getLootAndExp(loot);
+            Assert.AreEqual(60, hero.actualLifepoints);
+        }
     }
 }

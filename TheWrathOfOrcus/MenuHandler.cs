@@ -49,7 +49,6 @@ namespace TheWrathOfOrcus
         private void handleInputs()
         {
             int choice = Console.Read();
-            Console.WriteLine(choice);
 
             if(!(choice > 48 && choice < 49 + menuItems.Count))
             {
