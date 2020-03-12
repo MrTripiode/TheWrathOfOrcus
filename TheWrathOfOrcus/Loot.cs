@@ -5,7 +5,7 @@ using TheWrathOfOrcus.Interfaces;
 
 namespace TheWrathOfOrcus
 {
-    class Loot
+    public class Loot
     {
         int gold { get; }
         int experience { get; }
