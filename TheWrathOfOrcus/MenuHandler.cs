@@ -34,7 +34,7 @@ namespace TheWrathOfOrcus
 
         private void showChoices()
         {
-            // Console.Clear();
+            Console.Clear();
             Console.WriteLine("Bienvenue dans le village ! Que souhaitez vous faire ?");
             int i = 1;
             foreach(MenuItem item in menuItems)
@@ -49,11 +49,10 @@ namespace TheWrathOfOrcus
         private void handleInputs()
         {
             int choice = Console.Read();
-            Console.WriteLine(choice);
 
             if(!(choice > 48 && choice < 49 + menuItems.Count))
             {
-                // Console.Clear();
+                Console.Clear();
                 Console.WriteLine("Je n'ai pas compris votre réponse merci de choisir un nombre entre 1 et " + menuItems.Count);
                 System.Threading.Thread.Sleep(1000);
                 returnToMenu();
