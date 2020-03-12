@@ -33,5 +33,27 @@ namespace TheWrathOfOrcus
                 items.Add(item);
             }
         }
+
+        public void showInventory()
+        {
+            Console.Clear();
+            Console.WriteLine("Armes : ");
+            foreach(Weapon weapon in weapons)
+            {
+                Console.WriteLine("- " + weapon.name + " -> " + weapon.itemAttack + " Atk");
+            }
+            Console.WriteLine("Armures : ");
+            foreach (Armor armor in armors)
+            {
+                Console.WriteLine("- " + armor.name + " -> " + armor.itemDefence
+                    + " Def");
+            }
+            Console.WriteLine("Objets : ");
+            foreach (Item item in items)
+            {
+                Console.WriteLine("- " + item.name);
+            }
+            Console.Write("");
+        }
     }
 }
