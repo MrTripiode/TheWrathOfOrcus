@@ -26,5 +26,13 @@ namespace TheWrathOfOrcus
                 this.monsters.Add(new SpiderSwarm());
             }
         }
+
+        public Boolean IsSuccess() {
+            throw new NotImplementedException("Not implemented.");
+        }
+
+        public void KillMonster() {
+            throw new NotImplementedException("Not implemented.");
+        }
     }
 }
