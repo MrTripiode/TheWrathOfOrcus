@@ -12,9 +12,6 @@ namespace TheWrathOfOrcus.Interfaces
         int totalLifepoints { get; set; }
         int actualLifepoints { get; set; }
 
-        void takeDamage(int damage)
-        {
-
-        }
+        void takeDamage(int damage);
     }
 }

@@ -39,5 +39,9 @@ namespace TheWrathOfOrcus
             }
         }
 
+        public void takeDamage(int damage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

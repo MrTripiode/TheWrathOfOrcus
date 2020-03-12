@@ -16,7 +16,7 @@ namespace TheWrathOfOrcus.Monsters
 
         public void takeDamage(int damage)
         {
-            
+            this.actualLifepoints = this.actualLifepoints - damage;
         }
     }
 }
