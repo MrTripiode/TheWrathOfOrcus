@@ -26,7 +26,7 @@ namespace TheWrathOfOrcusTests
             Hero hero = new Hero("Patate");
             hero.actualLifepoints = hero.actualLifepoints - 2;
             hero.heal(-25);
-            Assert.AreEqual(hero.totalLifepoints, hero.actualLifepoints);
+            Assert.AreEqual(hero.totalLifepoints-2, hero.actualLifepoints);
         }
     }
 }
