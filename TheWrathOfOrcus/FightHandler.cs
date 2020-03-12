@@ -24,6 +24,10 @@ namespace TheWrathOfOrcus
 
         public static bool continueFight(Fighter fighter1, Fighter fighter2)
         {
+            if(fighter1.actualLifepoints <= 0 || fighter2.actualLifepoints <= 0)
+            {
+                return false;
+            }
             return true;
         }
     }
