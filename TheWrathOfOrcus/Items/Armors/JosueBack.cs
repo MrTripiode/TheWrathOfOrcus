@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using TheWrathOfOrcus.Interfaces;
 
-namespace TheWrathOfOrcus.Items.Weapons
+namespace TheWrathOfOrcus.Items.Armors
 {
-    class AntoineStick : Weapon
+    class JosueBack : Armor
     {
-        public int itemAttack { get; set; }
+        public int itemDefence { get; set; }
         public string name { get; set; }
 
         public void use()
@@ -15,10 +15,10 @@ namespace TheWrathOfOrcus.Items.Weapons
             throw new NotImplementedException();
         }
 
-        public AntoineStick()
+        public JosueBack()
         {
-            name = "Antoine epic stick";
-            itemAttack = 100000;
+            name = "Josue's back";
+            itemDefence = 1000;
         }
     }
 }
