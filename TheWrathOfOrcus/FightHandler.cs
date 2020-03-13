@@ -28,7 +28,7 @@ namespace TheWrathOfOrcus
             {
                 active.handleTurn(target);
                 this.nextTurn(target, active);
-            } 
+            }
             else
             {
                 this.handleEndOfFight(target, active);
@@ -41,7 +41,7 @@ namespace TheWrathOfOrcus
             {
                 Console.WriteLine(fighter2.name + "à gagné !");
                 this.handleWin(fighter2, fighter1);
-            } 
+            }
             else if (fighter2.actualLifepoints <= 0)
             {
                 Console.WriteLine(fighter1.name + " a gagné !");
@@ -56,7 +56,7 @@ namespace TheWrathOfOrcus
                 Hero hero = winner as Hero;
                 Monster monster = loser as Monster;
                 hero.getLootAndExp(monster.loot);
-            } 
+            }
             else if (loser.GetType() == typeof(Hero))
             {
                 Hero hero = loser as Hero;

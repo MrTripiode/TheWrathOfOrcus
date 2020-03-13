@@ -15,6 +15,7 @@ namespace TheWrathOfOrcus
         public Inventory inventory { get; set; }
         public int experience { get; set; }
         public int level { get; set; }
+        public int gold { get; set; }
 
         public Hero(string name)
         {
@@ -25,6 +26,7 @@ namespace TheWrathOfOrcus
             this.actualLifepoints = totalLifepoints;
             this.level = 1;
             this.experience = 0;
+            this.gold = 0;
             this.inventory = new Inventory();
             this.inventory.addStartingItems();
 
