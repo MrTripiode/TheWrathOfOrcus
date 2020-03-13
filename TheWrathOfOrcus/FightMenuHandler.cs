@@ -43,17 +43,23 @@ namespace TheWrathOfOrcus
 
         private void handleInputs()
         {
-            int choice = Console.Read();
-            Console.WriteLine(choice);
-
-            if (!(choice > 48 && choice < 49 + menuItems.Count))
-            {
-                Console.WriteLine("Le héros est perdu dans ses pensées et rate l'occasion d'agir. (1, " + menuItems.Count+")");
-                System.Threading.Thread.Sleep(1000);
-            } else
-            {
-                menuItems[choice - 49].ItemSelected();
+            int parsedChoice = 0;
+            string choice = Console.ReadLine();
+            if(!(Int32.TryParse(choice, out parsedChoice))) {
+                this.reset();
             }
+
+            if (parsedChoice < 0 || parsedChoice > (this.menuItems.Count)) {
+                this.reset();
+            }
+
+            menuItems[parsedChoice - 1].ItemSelected();
+        }
+
+        private void reset() {
+            Console.Clear();
+            Console.WriteLine("Le héros est perdu dans ses pensées et rate l'occasion d'agir. (1, " + menuItems.Count+")");
+            System.Threading.Thread.Sleep(1000);
         }
 
         internal void resetMenuItems()
