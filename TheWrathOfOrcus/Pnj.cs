@@ -43,13 +43,12 @@ namespace TheWrathOfOrcus
             PnjMenuHandler.getInstance().returnToMenu();
         }
 
-        public Boolean launchQuest() {
+        public void launchQuest() {
             foreach (var monster in this.quest.monsters) {
                 FightHandler fightHandler = new FightHandler(MenuHandler.getInstance().hero, monster);
                 fightHandler.startFight();
-                this.quest.KillMonster();
             }
-            return this.quest.IsSuccess();
+            MenuHandler.getInstance().returnToMenu();
         }
 
         public void attackTarget(Fighter target)
