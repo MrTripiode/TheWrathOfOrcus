@@ -17,16 +17,32 @@ namespace TheWrathOfOrcus
 
     public class AttackMenuItem : FightMenuItem
     {
-        public AttackMenuItem(Hero hero, Fighter monster)
+        public AttackMenuItem(Hero hero, Fighter opponent)
         {
             this.name = "Attaquer";
             this.hero = hero;
-            this.opponent = monster;
+            this.opponent = opponent;
         }
+
 
         public override void ItemSelected()
         {
             this.hero.attackTarget(this.opponent);
+        }
+    }
+    public class FightInventoryMenuItem : FightMenuItem
+    {
+        public FightInventoryMenuItem(Hero hero, Fighter opponent)
+        {
+            this.name = "Inventaire";
+            this.hero = hero;
+            this.opponent = opponent;
+        }
+
+
+        public override void ItemSelected()
+        {
+            this.hero.inventory.showInventory();
         }
     }
 }

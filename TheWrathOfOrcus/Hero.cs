@@ -15,6 +15,7 @@ namespace TheWrathOfOrcus
         public Inventory inventory { get; set; }
         public int experience { get; set; }
         public int level { get; set; }
+        public int gold { get; private set; }
 
         public Hero(string name)
         {
@@ -71,6 +72,7 @@ namespace TheWrathOfOrcus
             FightMenuHandler fmh = FightMenuHandler.getInstance();
             fmh.resetMenuItems();
             fmh.addMenuItem(new AttackMenuItem(this, target));
+            fmh.addMenuItem(new FightInventoryMenuItem(this, target));
             fmh.hero = this;
             fmh.opponent = target;
             fmh.showChoices();
@@ -79,6 +81,12 @@ namespace TheWrathOfOrcus
         {
             this.gold += loot.gold;
             this.experience += loot.experience;
+            Console.WriteLine("Vous gagnez " + loot.gold + " pièces d'or et " + loot.experience + " points d'expérience !");
+            foreach(Item item in loot.items)
+            {
+                Console.WriteLine("Vous trouvez: " + item.name);
+                this.inventory.addItemToInventory(item);
+            }
             this.checkIfGainedLevel();
         }
 
